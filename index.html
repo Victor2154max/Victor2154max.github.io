@@ -25,7 +25,6 @@
         .hero-content { position: relative; z-index: 2; text-align: center; max-width: 850px; padding: 20px; }
         .main-logo { max-width: 500px; width: 90%; height: auto; margin: 0 auto 15px; display: block; filter: drop-shadow(0 0 25px rgba(0,210,255,0.4)); }
         
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px; display: none; } /* Oculto porque el logo ya lo dice en grande */
         .tagline { font-size: 1.6rem; color: var(--accent-blue); font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .hero-desc { color: var(--text-light); font-size: 1.15rem; background: rgba(10, 14, 23, 0.75); padding: 20px; border-radius: 12px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
         
@@ -33,11 +32,11 @@
         h2 { font-size: 2rem; border-left: 4px solid var(--accent-orange); padding-left: 15px; margin-bottom: 40px; color: #fff; }
         
         .grid-identity, .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .card { background-color: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); transition: all 0.3s ease; }
+        .card { background-color: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { transform: translateY(-5px); border-color: rgba(0,210,255,0.3); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .card h3 { color: var(--accent-blue); margin-bottom: 15px; font-size: 1.3rem; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
-        .price-tag { display: inline-block; background: rgba(255,157,0,0.15); color: var(--accent-orange); padding: 4px 10px; border-radius: 6px; font-weight: bold; margin-top: 15px; font-size: 0.9rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+        .price-tag { display: inline-block; background: rgba(255,157,0,0.15); color: var(--accent-orange); padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 0.9rem; align-self: flex-start; }
         
         .valores-list { list-style: none; }
         .valores-list li { margin-bottom: 12px; padding-left: 20px; position: relative; color: var(--text-muted); font-size: 0.95rem; }
@@ -47,10 +46,16 @@
         .about-section h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
         .about-section p { margin-bottom: 15px; font-size: 1.05rem; color: #d1d9e6; }
         
-        .contact-box { text-align: center; background: var(--card-bg); padding: 50px 20px; border-radius: 12px; border: 1px solid rgba(0,210,255,0.1); margin-top: 40px; }
+        .contact-box { background: var(--card-bg); padding: 50px 40px; border-radius: 12px; border: 1px solid rgba(0,210,255,0.1); margin-top: 40px; text-align: left; }
+        .contact-box p.vvad-speech { color: #d1d9e6; font-size: 1.15rem; margin-bottom: 30px; border-left: 3px solid var(--accent-blue); padding-left: 20px; font-style: italic; line-height: 1.7; }
+        .btn-container { text-align: center; margin-top: 20px; }
         .contact-btn { display: inline-block; background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange)); color: white; padding: 16px 45px; font-weight: bold; border-radius: 30px; text-decoration: none; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,210,255,0.3); transition: all 0.3s ease; margin: 10px; }
         .contact-btn.tg { background: #0088cc; box-shadow: 0 4px 15px rgba(0,136,204,0.3); }
         .contact-btn:hover { transform: scale(1.03); opacity: 0.95; }
+        
+        .legal-section { margin-top: 80px; padding: 30px; background: rgba(255, 255, 255, 0.01); border-radius: 8px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .legal-section h4 { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .legal-text { font-size: 0.8rem; color: #5f708a; text-align: justify; line-height: 1.5; }
         
         footer { text-align: center; padding: 40px 20px; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
     </style>
@@ -60,13 +65,11 @@
     <!-- Sección de Cabecera con Carrusel Integrado -->
     <div class="hero-carousel">
         <div class="carousel-bg">
-            <!-- Imágenes oscuras de tecnología abstracta de fondo -->
             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200" class="active" alt="Fondo Tech 1">
             <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200" alt="Fondo Tech 2">
             <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200" alt="Fondo Tech 3">
         </div>
         <div class="hero-content">
-            <!-- Tu logotipo cuántico ahora escala con gran tamaño e impacto -->
             <img src="7ca06057-393a-4931-8228-93c190dc5191.jpeg" alt="VVAD IA STUDIO" class="main-logo">
             <div class="tagline">Automatizamos tu operación. Multiplicamos tus resultados.</div>
             <div class="hero-desc">En VVAD IA Studio no te vendemos software; diseñamos la arquitectura digital que trabaja por ti 24/7, permitiéndote escalar tu negocio sin necesidad de contratar un ejército de empleados.</div>
@@ -78,60 +81,74 @@
         <h2>Nuestros Servicios Especializados</h2>
         <div class="grid-services">
             <div class="card">
-                <h3>1. Desarrollo Web & E-Commerce Inteligente</h3>
-                <p>Tiendas Shopify o WooCommerce, landing pages de alta conversión y catálogos digitales. Integración con Mercado Libre, pasarelas de pago y automatización básica de pedidos.</p>
+                <div>
+                    <h3>1. Desarrollo Web & E-Commerce Inteligente</h3>
+                    <p>Tiendas Shopify o WooCommerce, landing pages de alta conversión y catálogos digitales. Integración con Mercado Libre, pasarelas de pago y automatización básica de pedidos.</p>
+                </div>
             </div>
             <div class="card">
-                <h3>2. Automatización de Ventas & Operaciones (WhatsApp Business)</h3>
-                <p>Agentes IA que responden, califican leads y agendan 24/7 usando Make.com + Zapier + modelos como Groq/Claude. Ejemplo real: flujo que envía mensajes automáticos cuando alguien pregunta por un producto.</p>
+                <div>
+                    <h3>2. Automatización de Ventas & Operaciones (WhatsApp)</h3>
+                    <p>Agentes IA que responden, califican leads y agendan 24/7 usando Make.com + Zapier + modelos como Groq/Claude. Ejemplo real: flujo que envía mensajes automáticos cuando alguien pregunta por un producto.</p>
+                </div>
             </div>
             <div class="card">
-                <h3>3. Optimización Avanzada para Marketplaces</h3>
-                <p>Auditorías y optimización SEO con IA para Mercado Libre y Amazon. Mejora masiva de títulos, descripciones y monitoreo automatizado de competencia.</p>
+                <div>
+                    <h3>3. Optimización Avanzada para Marketplaces</h3>
+                    <p>Auditorías y optimización SEO con IA para Mercado Libre y Amazon. Mejora masiva de títulos, descripciones y monitoreo automatizado de competencia.</p>
+                </div>
             </div>
             <div class="card">
-                <h3>4. Factoría de Contenido con IA</h3>
-                <p>Copywriting, guiones persuasivos y generación masiva de ideas para videos y posts estructurales (incluye avatares simplificados según los requerimientos).</p>
+                <div>
+                    <h3>4. Factoría de Contenido con IA</h3>
+                    <p>Copywriting, guiones persuasivos y generación masiva de ideas para videos y posts estructurales (incluye avatares simplificados según los requerimientos).</p>
+                </div>
             </div>
         </div>
 
-        <h2>Consultoría Estratégica & Precios</h2>
-        <div class="grid-identity">
+        <h2>El Recetario de Automatizaciones (Precios a la Medida)</h2>
+        <div class="grid-services">
             <div class="card">
-                <h3>Sesión Estratégica 1:1</h3>
-                <p>Revisión de tu operación actual de 60 minutos paso a paso + diagnóstico técnico preciso + diseño del plan lógico de automatización ideal para tu negocio.</p>
+                <div>
+                    <h3>El Menú Autónomo (Landing de Conversión)</h3>
+                    <p>Una sola página web ultra veloz donde el cliente ve tus productos o platillos, selecciona opciones con extras ("con doble queso") y genera la orden sin fricciones.</p>
+                </div>
+                <div class="price-tag">$6,000 - $12,000 MXN</div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>El Despachador Express (Web a WhatsApp)</h3>
+                    <p>Captura las selecciones de la Landing Page y las transforma en un mensaje de WhatsApp perfectamente ordenado con subtotales, notas y dirección, listo para ser enviado.</p>
+                </div>
+                <div class="price-tag">$3,000 - $5,500 MXN</div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>La Comandancia Digital (Alertas Telegram)</h3>
+                    <p>Un escenario en Make que procesa los datos de tus pedidos y los avienta al Telegram del equipo en formato tipo "ticket" de cocina con botones interactivos [Pedido listo / En camino].</p>
+                </div>
+                <div class="price-tag">$4,500 - $8,000 MXN</div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>El Curador Gastronómico (Contenido IA)</h3>
+                    <p>Digitalización de menús analógicos mediante visión artificial y generación de fotografías hiperrealistas de platillos con IA adaptadas al estilo local.</p>
+                </div>
+                <div class="price-tag">$2,500 - $5,000 MXN</div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>El Promotor Autónomo (Redes Sociales)</h3>
+                    <p>Escenario semanal en Make que analiza tus inventarios/menús, inventa una promoción atractiva, genera copys y te manda un botón de aprobación a Telegram antes de publicar en Facebook/Instagram.</p>
+                </div>
+                <div class="price-tag">$5,000 - $9,500 MXN</div>
+            </div>
+            <div class="card">
+                <div>
+                    <h3>Consultoría Estratégica Diagnóstica (1:1)</h3>
+                    <p>Sesión de 60 minutos enfocada en auditar tu operación actual, detectar cuellos de botella y trazar el mapa lógico de infraestructura ideal para tu negocio.</p>
+                </div>
                 <div class="price-tag">$1,200 MXN</div>
-            </div>
-            <div class="card">
-                <h3>Paquete Básico</h3>
-                <p>Implementación de automatizaciones simples de flujos informativos, ordenamiento de bases de datos y revisión técnica/limpieza de tu infraestructura CRM actual.</p>
-                <div class="price-tag">Desde $2,500 MXN</div>
-            </div>
-            <div class="card">
-                <h3>Paquete Pro Integral</h3>
-                <p>Despliegue completo de entorno e-commerce optimizado + Agente de WhatsApp con IA integrado + arquitectura lógica de seguimiento y conversión automatizada.</p>
-                <div class="price-tag">Desde $6,000 MXN</div>
-            </div>
-        </div>
-
-        <h2>Identidad Corporativa</h2>
-        <div class="grid-identity">
-            <div class="card">
-                <h3>Misión</h3>
-                <p>Democratizar el acceso a la inteligencia artificial avanzada para transformar y automatizar la operación de pequeños, medianos y grandes negocios, maximizando sus ventas y optimizando su tiempo a través de soluciones tecnológicas de última generación.</p>
-            </div>
-            <div class="card">
-                <h3>Visión</h3>
-                <p>Convertirnos en el estudio de consultoría e integración de IA referente a nivel hispanohablante, reconocidos por impulsar la transición digital de los comercios tradicionales hacia ecosistemas automatizados, escalables e inteligentes.</p>
-            </div>
-            <div class="card">
-                <h3>Valores</h3>
-                <ul class="valores-list">
-                    <li><strong>Innovación Continua:</strong> Siempre a la vanguardia de software y algoritmos del mercado.</li>
-                    <li><strong>Eficiencia Operativa:</strong> El tiempo es oro; si es viable automatizarlo, lo hacemos.</li>
-                    <li><strong>Transparencia Integral:</strong> Cuentas claras, entregas precisas y comunicación directa.</li>
-                    <li><strong>Orientación a Resultados:</strong> Implementamos métricas reales de venta y optimización.</li>
-                </ul>
             </div>
         </div>
 
@@ -143,14 +160,28 @@
             <p>No soy un teórico. Soy el que está metido en los diseños, probando, corrigiendo y mejorando hasta que el sistema funcione para el cliente. Si algo no entrega el resultado esperado, se ajusta.</p>
         </div>
 
+        <!-- Seccion de Contacto sin filtros -->
         <div class="contact-box">
-            <h2>¿Listo para poner tu negocio en piloto automático?</h2>
-            <p style="color: var(--text-muted); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">Platiquemos de tu proyecto sin rodeos. Elige la vía que prefieras para comunicarte directamente conmigo.</p>
+            <h2>¿Estás viendo esto solo por curiosidad o de verdad quieres automatizar?</h2>
+            <br>
+            <p class="vvad-speech">
+                "Si te da curiosidad o simplemente estás 'viendo' o 'checando' escríbeme ya sea por cualquiera de estos medios, háblame sobre tu proyecto, ideas, qué te gustaría implementar en tu negocio, cotiza sin problema, escribirme y recibir una cotizacion no te costara nada y si ya entraste al sitio, bueno ya gastaste algunos 'megas' de tu navegacion en ello, lo peor que podria ser es que el presupuesto me devuelva a mi un 'ah gracias joven, lo checo y yo le llamo', o el 'muchas gracias solo estaba checando'... o en el mejor de los casos sea algo que se adapte a lo que buscas y quizas, tal vez pase un poco la expectativa del servicio."
+            </p>
             
-            <!-- Botones de contacto listos, cuando tengas tus accesos solo editas el enlace -->
-            <a href="https://wa.me/TU_NUEVO_NUMERO_WHATSAPP" class="contact-btn" target="_blank">Escríbeme por WhatsApp 🤖</a>
-            <a href="https://t.me/TU_USUARIO_TELEGRAM" class="contact-btn tg" target="_blank">Escríbeme por Telegram 🚀</a>
+            <div class="btn-container">
+                <a href="https://wa.me/TU_NUEVO_NUMERO_WHATSAPP" class="contact-btn" target="_blank">Háblame por WhatsApp 🤖</a>
+                <a href="https://t.me/TU_USUARIO_TELEGRAM" class="contact-btn tg" target="_blank">Háblame por Telegram 🚀</a>
+            </div>
         </div>
+
+        <!-- Blindaje Legal contra lagunas de abogados -->
+        <div class="legal-section">
+            <h4>Limitation of Liability & AI Infrastructure Desclamer</h4>
+            <div class="legal-text">
+                EL PRESTADOR (VVAD IA STUDIO) actúa exclusivamente como un diseñador, configurador y orquestador de flujos lógicos. Los servicios se apoyan en infraestructura, APIs, plataformas de automatización, servidores de hospedaje y modelos de lenguaje/generación basados en Inteligencia Artificial propiedad de terceras empresas (incluyendo de forma enunciativa mas no limitativa: proveedores de LLMs, plataformas No-Code/Low-Code, pasarelas de pago y servicios de mensajería). EL PRESTADOR no tiene control, propiedad ni responsabilidad sobre la estabilidad, caídas de servicio, actualizaciones, cambios de políticas, errores de procesamiento o "alucinaciones" de dichos terceros. El CLIENTE acepta el servicio bajo la premisa de "tal como está" y deslinda al PRESTADOR de cualquier pérdida financiera, comercial o legal derivada de fallas ajenas a la lógica directa de la construcción.
+            </div>
+        </div>
+
     </div>
 
     <footer>
@@ -165,7 +196,7 @@
             images[current].classList.remove('active');
             current = (current + 1) % images.length;
             images[current].classList.add('active');
-        }, 5000); // Cambia de imagen de fondo suavemente cada 5 segundos
+        }, 5000);
     </script>
 
 </body>
